@@ -1,0 +1,1463 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>黄晓钰｜2025届管培生轮岗述职</title>
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --paper: rgba(255, 255, 255, .92);
+      --ink: #0f172a;
+      --text: #475569;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --blue: #2563eb;
+      --blue-deep: #1d4ed8;
+      --blue-soft: #eff6ff;
+      --purple: #7c3aed;
+      --purple-soft: #f5f3ff;
+      --accent: var(--blue);
+      --accent-deep: var(--blue-deep);
+      --radius: 16px;
+      --topbar: 64px;
+      --shadow: 0 1px 2px rgba(15, 23, 42, .04), 0 10px 36px rgba(15, 23, 42, .06);
+      --fs-display: 30px;
+      --fs-chapter: 22px;
+      --fs-section: 17px;
+      --fs-card: 15px;
+      --fs-body: 14px;
+      --fs-small: 13px;
+      --fs-caption: 12px;
+      --fs-label: 11px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      line-height: 1.65;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 70% 55% at 8% -5%, rgba(37, 99, 235, .10), transparent 58%),
+        radial-gradient(ellipse 55% 45% at 96% 8%, rgba(124, 58, 237, .10), transparent 52%),
+        radial-gradient(ellipse 60% 40% at 50% 105%, rgba(37, 99, 235, .05), transparent 55%);
+      background-attachment: fixed;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; }
+
+    .progress {
+      position: fixed; top: 0; left: 0; z-index: 40;
+      height: 3px; width: 0;
+      background: linear-gradient(90deg, var(--blue), var(--purple));
+    }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 30;
+      display: flex; align-items: center; gap: 18px;
+      min-height: var(--topbar);
+      padding: 8px clamp(16px, 3vw, 40px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: blur(16px);
+    }
+    .topbar-brand { flex: 0 0 auto; min-width: 0; display: flex; align-items: center; }
+    .topbar-brand strong { display: block; font-size: 14px; line-height: 1.3; }
+    .tabs {
+      flex: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 6px;
+    }
+    .tab {
+      padding: 8px 10px; border-radius: 12px;
+      color: var(--text); text-align: center;
+    }
+    .tab span { display: block; font-size: 10px; font-weight: 800; letter-spacing: .08em; color: var(--muted); }
+    .tab b { display: block; margin-top: 1px; font-size: 13px; font-weight: 700; }
+    .tab:hover { background: var(--blue-soft); color: var(--blue-deep); }
+    .tab.active {
+      color: var(--blue-deep);
+      background: linear-gradient(135deg, rgba(37,99,235,.14), rgba(124,58,237,.1));
+      box-shadow: inset 0 0 0 1px #bfdbfe;
+    }
+    .tab.active span { color: var(--blue); }
+
+    .layout { min-height: 100vh; }
+    .main { width: 100%; max-width: 1180px; margin: 0 auto; padding: 24px clamp(20px, 4vw, 48px) 72px; }
+    .chapter { display: none; margin-top: 8px; }
+    .chapter.is-on { display: block; }
+
+    .hero {
+      position: relative; overflow: hidden;
+      margin-bottom: 24px;
+      padding: 36px 40px 32px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(135deg, #fff 0%, #eff6ff 56%, #f5f3ff 100%);
+      box-shadow: var(--shadow);
+    }
+    .hero::after {
+      content: "";
+      position: absolute; right: -80px; bottom: -110px;
+      width: 280px; height: 280px; border-radius: 50%;
+      border: 40px solid rgba(37, 99, 235, .07);
+    }
+    .eyebrow {
+      display: inline-flex; padding: 6px 12px; border-radius: 999px;
+      background: #dbeafe; color: #1d4ed8; font-size: 12px; font-weight: 800;
+    }
+    h1 {
+      position: relative; z-index: 1;
+      margin: 14px 0 0;
+      font-size: var(--fs-display); font-weight: 800;
+      line-height: 1.2; letter-spacing: -.02em;
+    }
+    .hero-meta {
+      position: relative; z-index: 1;
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 12px; color: var(--muted); font-size: var(--fs-caption);
+    }
+    .hero-meta span + span::before { content: "·"; margin-right: 8px; color: #cbd5e1; }
+
+    .chapter-head {
+      display: flex; align-items: baseline; gap: 14px;
+      margin-bottom: 18px; padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .chapter-num {
+      color: var(--blue); font-size: var(--fs-label);
+      font-weight: 800; letter-spacing: .12em;
+    }
+    .chapter-head h2 {
+      margin: 0; font-size: var(--fs-chapter); font-weight: 800; letter-spacing: -.01em;
+    }
+    .chapter-head p {
+      margin: 0 0 0 auto; max-width: 360px;
+      color: var(--muted); font-size: var(--fs-caption); text-align: right;
+    }
+
+    .block {
+      margin-bottom: 16px; padding: 24px 26px;
+      border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--paper); box-shadow: var(--shadow);
+      scroll-margin-top: 24px;
+    }
+    .block h3 {
+      margin: 0; font-size: var(--fs-section); font-weight: 700; letter-spacing: -.01em;
+    }
+    .title-sub {
+      margin: 4px 0 16px; color: var(--muted);
+      font-size: var(--fs-caption); font-weight: 500;
+    }
+
+    .intro-kicker { color: var(--muted); font-size: var(--fs-label); font-weight: 700; letter-spacing: .1em; }
+    .intro-head {
+      display: grid; grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 24px; align-items: center;
+    }
+    .intro-name { margin: 0 0 8px; font-size: 28px; font-weight: 800; letter-spacing: -.02em; }
+    .intro-facts { margin: 0 0 4px; color: var(--text); font-size: var(--fs-body); }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .intro-tags {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    }
+    .intro-tags .chip {
+      margin: 0; justify-content: center; text-align: center;
+      display: grid; place-items: center; min-height: 36px;
+    }
+    .chip {
+      padding: 4px 10px; border-radius: 999px;
+      background: #f1f5f9; color: #475569; font-size: var(--fs-caption); font-weight: 700;
+    }
+    .chip.blue { background: #dbeafe; color: #1d4ed8; }
+    .chip.purple { background: #ede9fe; color: #6d28d9; }
+
+    .intro-timeline {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px; margin-top: 20px;
+    }
+    .tl-item {
+      padding: 12px 14px 14px; border-radius: 12px;
+      border: 1px solid var(--line);
+      background: linear-gradient(160deg, rgba(255,255,255,.92), rgba(37,99,235,.04));
+    }
+    .tl-item.now {
+      background: linear-gradient(160deg, rgba(255,255,255,.92), rgba(124,58,237,.06));
+      border-color: #ddd6fe;
+    }
+    .tl-year { color: var(--blue-deep); font-size: var(--fs-label); font-weight: 800; letter-spacing: .06em; }
+    .tl-role { margin: 4px 0 0; font-size: var(--fs-small); font-weight: 700; }
+
+    .skill-box {
+      margin-top: 16px; padding: 14px 16px 16px;
+      border: 1px solid var(--line); border-radius: 14px;
+      background: #fff;
+    }
+    .skill-box .label {
+      margin-bottom: 10px;
+      color: var(--blue-deep); font-size: 14px; font-weight: 800; letter-spacing: .04em;
+    }
+    .skill-row {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .skill-card {
+      display: grid; place-items: center;
+      min-height: 64px; padding: 14px 12px; border-radius: 12px;
+      border: 1px solid var(--line);
+      font-size: 14px; font-weight: 800; text-align: center; line-height: 1.35;
+    }
+    .skill-card.gray {
+      background: #f1f5f9; color: #64748b; border-color: #e2e8f0;
+    }
+    .skill-card.blue {
+      background: var(--blue-soft); color: var(--blue-deep); border-color: #bfdbfe;
+    }
+
+    .role-switch {
+      margin: 0 0 18px; padding: 16px;
+      border-radius: 14px; border: 1px solid #bfdbfe;
+      background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(37,99,235,.05));
+    }
+    .role-switch-head { margin-bottom: 12px; font-size: 12px; font-weight: 700; color: var(--blue-deep); }
+    .switch-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .switch-panel {
+      padding: 12px; border-radius: 12px;
+      border: 1px solid var(--line); background: rgba(255,255,255,.82);
+    }
+    .switch-panel-title {
+      margin-bottom: 10px; padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 11px; font-weight: 800; color: var(--blue-deep); letter-spacing: .04em;
+    }
+    .switch-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; }
+    .switch-card {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      padding: 10px 8px; border-radius: 10px;
+      border: 1px solid var(--line); text-align: center;
+    }
+    .switch-card.from { background: #f8fafc; }
+    .switch-card.to { background: var(--blue-soft); border-color: #bfdbfe; }
+    .switch-label { font-size: 12px; font-weight: 800; line-height: 1.3; }
+    .switch-card.to .switch-label { color: var(--blue-deep); }
+    .switch-arrow {
+      display: grid; place-items: center;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(37,99,235,.1); color: var(--blue); font-weight: 800;
+    }
+
+    .idp-list { display: grid; gap: 10px; margin-top: 16px; }
+    .idp-head {
+      display: grid; grid-template-columns: 220px 1fr; gap: 16px; align-items: center;
+      padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line);
+      background: #f8fafc;
+      color: var(--ink); font-size: 15px; font-weight: 800;
+    }
+    .idp-row {
+      display: grid; grid-template-columns: 220px 1fr; gap: 16px; align-items: center;
+      padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line);
+      background: linear-gradient(135deg, #fff, var(--blue-soft));
+    }
+    .idp-goal { display: flex; align-items: center; gap: 10px; }
+    .idp-goal span {
+      flex: 0 0 28px; height: 28px; display: grid; place-items: center;
+      border-radius: 8px; background: var(--blue); color: #fff;
+      font-size: 11px; font-weight: 800;
+    }
+    .idp-goal b { font-size: 15px; line-height: 1.4; color: var(--blue-deep); }
+    .idp-marks { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+    .idp-marks li {
+      display: grid; grid-template-columns: 18px 1fr; gap: 8px; align-items: start;
+      color: var(--text); font-size: 13px; line-height: 1.5;
+    }
+    .idp-marks li::before {
+      content: "✓";
+      width: 18px; height: 18px; margin-top: 1px;
+      display: grid; place-items: center;
+      border-radius: 50%; background: #dbeafe; color: var(--blue-deep);
+      font-size: 11px; font-weight: 800;
+    }
+    .hr-row {
+      display: grid; grid-template-columns: 88px 1fr; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13px;
+    }
+    .hr-row:last-child { border-bottom: 0; }
+    .hr-row b { color: var(--blue-deep); }
+
+    .growth-timeline {
+      display: grid; grid-template-columns: 1fr auto 1fr auto 1fr;
+      align-items: center; gap: 0;
+      margin: 0 0 16px; padding: 14px 10px;
+      border: 1px solid var(--line); border-radius: 12px;
+      background: linear-gradient(90deg, rgba(37,99,235,.04), rgba(124,58,237,.06), rgba(37,99,235,.08));
+    }
+    .gt-node { text-align: center; min-width: 0; }
+    .gt-node b { display: block; color: var(--blue-deep); font-size: 15px; font-weight: 800; }
+    .gt-node span { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; font-weight: 600; }
+    .gt-node.active b { color: var(--purple); }
+    .gt-seg {
+      width: 100%; min-width: 24px; height: 2px;
+      background: linear-gradient(90deg, #93c5fd, #7c3aed); opacity: .55;
+    }
+
+    .phase-stack {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px; align-items: stretch;
+    }
+    .phase-card {
+      display: flex; flex-direction: column; min-width: 0;
+      border: 1px solid var(--line); border-radius: 14px;
+      overflow: hidden; background: rgba(255,255,255,.78);
+    }
+    .phase-card.active { border-color: #c4b5fd; box-shadow: 0 8px 32px rgba(124,58,237,.1); }
+    .phase-head {
+      display: flex; align-items: center;
+      min-height: 52px; padding: 12px 14px;
+      background: var(--phase-bg);
+      border-left: 3px solid var(--phase-color);
+    }
+    .phase-head .name { font-size: var(--fs-card); font-weight: 700; }
+    .phase-layer { flex: 0 0 auto; padding: 10px 14px 12px; border-top: 1px solid var(--line); }
+    .phase-card > .phase-layer:last-child { flex: 1; }
+    .phase-layer-label {
+      margin-bottom: 5px; color: var(--muted);
+      font-size: var(--fs-label); font-weight: 700; letter-spacing: .08em;
+    }
+    .phase-layer .lead {
+      margin: 0 0 8px; font-size: var(--fs-small); font-weight: 700; line-height: 1.4;
+      min-height: calc(1.4em * 2);
+    }
+    .phase-layer .desc { margin: 0; color: var(--text); font-size: var(--fs-caption); line-height: 1.5; }
+    .kw-tags {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+    }
+    .kw-tags .phase-item { display: grid; place-items: center; text-align: center; }
+    .phase-bullets {
+      margin: 0; padding: 0; list-style: none;
+      display: grid; gap: 8px;
+    }
+    .phase-bullets li {
+      position: relative; padding-left: 12px;
+      color: var(--text); font-size: 11px; line-height: 1.45;
+      white-space: nowrap;
+    }
+    .phase-bullets li::before {
+      content: ""; position: absolute; left: 0; top: .55em;
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--phase-color, var(--blue));
+    }
+    .phase-bullets b { color: var(--ink); font-weight: 700; }
+    .phase-item {
+      padding: 4px 8px; border-radius: 7px;
+      background: rgba(37,99,235,.08); color: var(--ink);
+      font-size: 11px; font-weight: 600;
+    }
+    .phase-card:nth-child(1) { --phase-color: var(--blue); --phase-bg: linear-gradient(135deg, rgba(37,99,235,.08), #fff); }
+    .phase-card:nth-child(2) { --phase-color: #3b82f6; --phase-bg: linear-gradient(135deg, rgba(59,130,246,.1), #fff); }
+    .phase-card:nth-child(3) { --phase-color: var(--purple); --phase-bg: linear-gradient(135deg, rgba(124,58,237,.1), #fff); }
+    .phase-card:nth-child(3) .phase-item { background: rgba(124,58,237,.1); }
+
+    .subchapter { margin: 28px 0 14px; }
+    .chapter-head + .subchapter { margin-top: 0; }
+    .subchapter h3 { margin: 0; font-size: var(--fs-section); font-weight: 700; }
+    .subchapter .title-sub { margin: 4px 0 0; }
+
+    .case-group { margin-bottom: 22px; }
+    .case-group-head { margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    .case-group-head h4 { margin: 0; font-size: 18px; font-weight: 700; color: var(--blue-deep); }
+    .cases-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .cases-grid .case { margin-bottom: 0; }
+
+    .case {
+      margin-bottom: 14px; border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--paper); box-shadow: var(--shadow); overflow: hidden;
+      scroll-margin-top: 24px;
+    }
+    .case-head { padding: 20px 22px 8px; }
+    .case-label { color: var(--muted); font-size: var(--fs-label); font-weight: 700; letter-spacing: .08em; }
+    .case-head h4 { margin: 6px 0 0; font-size: 18px; font-weight: 700; }
+    .case-head > h4:first-child { margin-top: 0; }
+    .case-cap { margin: 0 0 10px; color: var(--blue-deep); font-size: 12px; font-weight: 700; }
+    .case-row {
+      display: grid; grid-template-columns: 36px 1fr; gap: 12px;
+      align-items: stretch; margin-bottom: 12px;
+    }
+    .case-row:last-child { margin-bottom: 0; }
+    .case-row-label {
+      display: grid; place-items: center;
+      writing-mode: vertical-rl; letter-spacing: .18em;
+      color: var(--blue-deep); font-size: 12px; font-weight: 800;
+      background: var(--blue-soft); border-radius: 10px; padding: 10px 0;
+    }
+    .cap-list { display: grid; gap: 8px; margin: 0 0 12px; }
+    .cap-list.cols-2 { grid-template-columns: 1fr 1fr; }
+    .case-row .cap-list, .case-row .kpi-grid, .case-row .bar-list, .case-row .route-inline { margin: 0; }
+    .cap-item {
+      padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(37,99,235,.06), rgba(124,58,237,.04));
+    }
+    .cap-item b { display: block; margin-bottom: 4px; color: var(--blue-deep); font-size: 12px; font-weight: 800; }
+    .cap-item p { margin: 0; color: var(--text); font-size: 13px; line-height: 1.55; }
+    .stage-panel .cap-list { margin: 12px 0 0; }
+    .case-verdict {
+      margin: 0 0 14px; padding: 10px 12px; border-radius: 10px;
+      background: linear-gradient(135deg, rgba(37,99,235,.08), rgba(124,58,237,.05));
+      font-size: 14px; font-weight: 700;
+    }
+    .case-body { padding: 0 22px 18px; }
+
+    .kpi-grid { display: grid; gap: 10px; margin-top: 4px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+    .kpi-grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .kpi-grid.cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+    .kpi-grid.cols-5 .kpi { padding: 10px 10px; }
+    .kpi-grid.cols-5 .kpi strong { font-size: 18px; }
+    .kpi-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .kpi {
+      padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line);
+      background: linear-gradient(160deg, #fff, var(--blue-soft));
+    }
+    .kpi span { display: block; font-size: 11px; color: var(--muted); font-weight: 600; }
+    .kpi strong { display: block; margin-top: 4px; font-size: 20px; font-weight: 800; color: var(--blue-deep); letter-spacing: -.02em; }
+    .kpi small { display: block; margin-top: 2px; color: var(--muted); font-size: 10px; }
+
+    .bar-list {
+      display: grid; gap: 6px; margin-top: 8px; padding: 10px 12px;
+      border: 1px solid var(--line); border-radius: 12px; background: #fff;
+    }
+    .bar-lead { margin: 0 0 12px; color: var(--ink); font-size: 13px; font-weight: 700; line-height: 1.5; }
+    .bar-row { display: grid; grid-template-columns: 118px 1fr 42px; gap: 10px; align-items: center; font-size: 12px; font-weight: 700; }
+    .bar-track { height: 8px; background: #e2e8f0; border-radius: 8px; overflow: hidden; }
+    .bar-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--purple)); }
+    .bar-row b { color: var(--blue); text-align: right; }
+
+    .route-inline {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+      margin: 4px 0 0; padding: 0;
+      font-size: 12px; font-weight: 700; color: var(--text);
+    }
+    .route-inline span {
+      padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff;
+    }
+    .route-inline i { color: var(--blue); font-style: normal; }
+
+    .stage-split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .stage-panel {
+      padding: 14px; border-radius: 12px; border: 1px solid var(--line); background: #fff;
+    }
+    .stage-panel .label { color: var(--blue); font-size: 11px; font-weight: 800; letter-spacing: .06em; }
+    .stage-panel h5 { margin: 4px 0 10px; font-size: 14px; }
+
+    details.case-more { border-top: 1px solid var(--line); background: rgba(248,250,252,.7); }
+    details.case-more summary {
+      padding: 12px 22px; color: var(--blue-deep); font-size: 13px; font-weight: 700;
+      cursor: pointer; list-style: none;
+    }
+    details.case-more summary::-webkit-details-marker { display: none; }
+    details.case-more summary::after { content: "展开自我突破"; float: right; color: var(--muted); font-weight: 600; }
+    details.case-more[open] summary::after { content: "收起"; }
+    .detail-grid { padding: 0 22px 16px; display: grid; gap: 10px; }
+    .case-body .detail-grid {
+      padding: 12px 14px; margin-bottom: 12px;
+      border: 1px solid var(--line); border-radius: 12px; background: #fff;
+    }
+    .detail-row { display: grid; grid-template-columns: 92px 1fr; gap: 12px; font-size: 13px; color: var(--text); }
+    .detail-row b { color: var(--text); font-weight: 700; }
+    .detail-row p { margin: 0; color: var(--text); }
+    .detail-points { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; color: var(--text); }
+    .detail-points li { position: relative; padding-left: 12px; color: var(--text); }
+    .detail-points li::before {
+      content: ""; position: absolute; left: 0; top: .55em;
+      width: 5px; height: 5px; border-radius: 50%; background: var(--blue);
+    }
+
+    .core-value {
+      display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center;
+      margin-top: 4px; padding: 16px 20px 16px 18px; border-radius: 14px;
+      border: 1px solid #c7d2fe;
+      border-left: 4px solid var(--blue);
+      background: linear-gradient(90deg, #eef2ff 0%, #f5f3ff 100%);
+      box-shadow: none;
+    }
+    .core-value b {
+      display: inline-flex; align-items: center; margin: 0; padding: 6px 10px;
+      border-radius: 8px; background: #e0e7ff; color: var(--blue-deep);
+      font-size: 12px; font-weight: 800; letter-spacing: .12em; white-space: nowrap;
+    }
+    .core-value p { margin: 0; color: var(--ink); font-size: 14px; line-height: 1.65; }
+    .case-horizontal {
+      display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 20px; padding: 20px 22px 18px;
+    }
+
+    .table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin-top: 16px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff;
+    }
+    .table th, .table td {
+      padding: 12px 14px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      text-align: left; vertical-align: top; font-size: 13px;
+    }
+    .table th { background: #f8fafc; font-weight: 800; }
+    .table tr:last-child td { border-bottom: 0; }
+    .table th:last-child, .table td:last-child { border-right: 0; }
+    .ability-head {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    }
+    .ability-legend {
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+      color: var(--muted); font-size: 11px; font-weight: 600;
+    }
+    .ability-legend i {
+      display: inline-block; width: 10px; height: 10px; margin-right: 6px;
+      border-radius: 3px; vertical-align: -1px;
+    }
+    .ability-legend .dot-before { background: #93c5fd; }
+    .ability-legend .dot-after { background: var(--blue); }
+    .ability-note { margin: 8px 0 0; color: var(--muted); font-size: 11px; }
+    .ability-table th:nth-child(1),
+    .ability-table th:nth-child(2) { padding: 12px 8px; }
+    .ability-table col.dim { width: 112px; }
+    .ability-table col.skill { width: 86px; }
+    .ability-table col.radar { width: 340px; }
+    .ability-table td.dim {
+      width: 112px; padding: 12px 8px; text-align: center; vertical-align: middle;
+      background: var(--blue-soft); color: #1d4ed8; font-weight: 800;
+      white-space: nowrap;
+    }
+    .ability-table tr.dim-gen td.dim { background: #f8fafc; color: #334155; }
+    .ability-table tr.dim-org td.dim { background: var(--purple-soft); color: #6d28d9; }
+    .ability-table td.skill {
+      width: 86px; padding: 12px 8px; font-weight: 800; white-space: nowrap;
+      vertical-align: middle;
+    }
+    .ability-table tbody td:not(.dim):not(.skill):not(.radar-cell) {
+      vertical-align: middle;
+    }
+    .ability-table .chips { margin-top: 0; align-items: center; }
+    .ability-table .chip,
+    .ability-table .chip.blue,
+    .ability-table .chip.purple {
+      background: #dbeafe; color: #1d4ed8;
+    }
+    .ability-table th.radar-col, .ability-table td.radar-cell {
+      width: 340px; padding: 10px 8px; text-align: center; vertical-align: middle;
+      background: #fafbff;
+    }
+    .ability-table tr.dim-gen td.radar-cell { background: #f8fafc; }
+    .ability-table tr.dim-org td.radar-cell { background: #faf8ff; }
+    .ability-table td.radar-cell svg {
+      display: block; width: 100%; height: auto; overflow: visible;
+    }
+
+    .ba { display: grid; grid-template-columns: 1fr 36px 1fr; gap: 10px; margin-top: 16px; }
+    .ba-col { padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; }
+    .ba-col.before { background: #f8fafc; }
+    .ba-col.now { background: var(--blue-soft); border-color: #bfdbfe; }
+    .ba-col .label { font-size: 13px; font-weight: 800; color: var(--muted); margin-bottom: 6px; }
+    .ba-col.now .label { color: var(--blue-deep); }
+    .ba-col p { margin: 0; font-size: 13px; color: var(--text); }
+    .ba-arrow { display: grid; place-items: center; color: var(--blue); font-weight: 900; }
+
+    .stack-list { display: grid; gap: 10px; margin-top: 16px; }
+    .stack-item {
+      display: grid; grid-template-columns: 120px 1fr; gap: 12px;
+      padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line);
+      background: linear-gradient(135deg, #fff, var(--blue-soft));
+      font-size: 13px;
+    }
+    .stack-item b { color: var(--blue-deep); }
+    .stack-item p { margin: 0; color: var(--text); }
+
+    .suggest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .suggest-card {
+      padding: 16px; border-radius: 14px; border: 1px solid var(--line); background: #fff;
+    }
+    .suggest-card.blue { background: var(--blue-soft); border-color: #bfdbfe; }
+    .suggest-card.purple { background: var(--purple-soft); border-color: #ddd6fe; }
+    .suggest-card .label { color: var(--blue-deep); font-size: 13px; font-weight: 800; }
+    .suggest-card h4 { margin: 6px 0 10px; font-size: 15px; }
+    .suggest-card p { margin: 0 0 8px; font-size: 13px; color: var(--text); }
+    .suggest-card p:last-child { margin-bottom: 0; }
+
+    .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .plan-card {
+      padding: 16px 18px; border-radius: 14px; border: 1px solid #c7d2fe;
+      background: linear-gradient(135deg, #ffffff 0%, #eef4ff 55%, #f3f0ff 100%);
+    }
+    .plan-card.blue {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border-color: #bfdbfe;
+    }
+    .plan-card.purple {
+      background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+      border-color: #ddd6fe;
+    }
+    .plan-card h4 { margin: 8px 0; font-size: 15px; }
+    .plan-card p { margin: 6px 0; font-size: 13px; color: var(--text); }
+
+    .layer {
+      display: grid; grid-template-columns: 132px 1fr; gap: 14px;
+      margin-top: 12px; padding: 16px; border-radius: 14px;
+      background: #f8fafc; border: 1px solid var(--line);
+    }
+    .layer-side { text-align: center; padding-top: 8px; }
+    .layer-side .n {
+      width: 32px; height: 32px; margin: 0 auto 6px;
+      display: grid; place-items: center; border-radius: 50%;
+      background: var(--blue); color: #fff; font-size: 12px; font-weight: 800;
+    }
+    .layer-side .sub { color: var(--muted); font-size: 12px; }
+    .layer-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    .mini { padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+    .mini h4 { margin: 0 0 6px; font-size: 13px; }
+    .mini p { margin: 0; font-size: 12px; color: var(--text); }
+    .mini .foot { margin-top: 8px; color: var(--blue); font-size: 11px; font-weight: 800; }
+    .mini.blue { background: var(--blue-soft); border-color: #bfdbfe; }
+    .mini.purple { background: var(--purple-soft); border-color: #ddd6fe; }
+    .mini.soft {
+      background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+      border-color: #c7d2fe;
+    }
+
+    .horizon {
+      margin-top: 16px; padding: 24px; border-radius: 18px;
+      border: 1px solid #c7d2fe;
+      background: linear-gradient(135deg, #eef4ff 0%, #eef2ff 52%, #f5f3ff 100%);
+      color: var(--ink);
+    }
+    .horizon .k { color: var(--blue); font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+    .year1 .layer {
+      background: rgba(255,255,255,.82); border-color: #e0e7ff;
+    }
+    .year1 h3 + .layer { margin-top: 0; }
+    .horizon h3 { margin: 8px 0 16px; color: var(--blue-deep); font-size: 18px; }
+    .year35 .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .year35 .card {
+      padding: 14px; border-radius: 12px;
+      background: rgba(255,255,255,.82); border: 1px solid #e0e7ff;
+    }
+    .year35 .card h4 { margin: 0 0 6px; font-size: 13px; color: var(--ink); }
+    .year35 .card p { margin: 0; font-size: 12px; color: var(--text); }
+
+    .foot {
+      margin-top: 40px; padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 12px; text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .topbar { flex-wrap: wrap; gap: 8px; padding: 10px 14px; }
+      .topbar-brand { width: 100%; }
+      .tabs { width: 100%; }
+      .tab { padding: 7px 6px; }
+      .tab b { font-size: 12px; }
+      .cases-grid, .switch-duo, .suggest-grid, .plan-grid, .stage-split, .case-horizontal, .cap-list.cols-2, .core-value { grid-template-columns: 1fr; }
+      .ability-table th.radar-col, .ability-table td.radar-cell { display: none; }
+      .ability-head { flex-wrap: wrap; }
+      .phase-stack, .layer, .layer-cards, .year35 .grid, .ba { grid-template-columns: 1fr; }
+      .ba-arrow { display: none; }
+      .chapter-head { flex-wrap: wrap; }
+      .chapter-head p { margin-left: 0; text-align: left; max-width: none; }
+    }
+    @media (max-width: 720px) {
+      .intro-head { grid-template-columns: 1fr; }
+      .intro-timeline, .skill-row { grid-template-columns: 1fr 1fr; }
+      .growth-timeline { grid-template-columns: 1fr; gap: 8px; }
+      .gt-seg { width: 2px; height: 16px; margin: 0 auto; }
+      .hr-row, .detail-row, .stack-item, .idp-row, .idp-head { grid-template-columns: 1fr; gap: 4px; }
+      .kpi-grid.cols-5, .kpi-grid.cols-3, .kpi-grid.cols-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <header class="topbar">
+    <div class="topbar-brand">
+      <strong>黄晓钰 · 轮岗述职</strong>
+    </div>
+    <nav class="tabs" aria-label="四大板块">
+      <button class="tab active" type="button" data-tab="basic"><span>01</span><b>个人基本情况</b></button>
+      <button class="tab" type="button" data-tab="growth"><span>02</span><b>成长与进步</b></button>
+      <button class="tab" type="button" data-tab="insight"><span>03</span><b>认知与洞察</b></button>
+      <button class="tab" type="button" data-tab="future"><span>04</span><b>发展规划</b></button>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <main class="main">
+      <section class="chapter is-on" id="basic">
+        <header class="hero" id="top">
+          <div class="eyebrow">运营序列</div>
+          <h1>管培生轮岗述职</h1>
+          <div class="hero-meta">
+            <span>黄晓钰</span>
+            <span>国内运营 · 用户体系</span>
+            <span>2025.08—2026.08</span>
+          </div>
+        </header>
+        <div class="chapter-head">
+          <span class="chapter-num">01</span>
+          <h2>个人基本情况</h2>
+          <p>从内容方向切进商业化运营</p>
+        </div>
+
+        <article class="block" id="intro">
+          <div class="intro-head">
+            <div>
+              <h3 class="intro-name">黄晓钰</h3>
+              <p class="intro-facts">复旦大学新闻学院 本硕</p>
+              <p class="intro-facts">2025年7月入职 · 运营管培生 · 国内运营 · 用户体系</p>
+            </div>
+            <div class="intro-tags">
+              <span class="chip blue">自驱力强</span>
+              <span class="chip blue">持续学习</span>
+              <span class="chip blue">开放心态</span>
+              <span class="chip blue">勇于尝新</span>
+            </div>
+          </div>
+          <div class="intro-timeline">
+            <div class="tl-item">
+              <div class="tl-year">2022</div>
+              <div class="tl-role">字节跳动 · 内容运营</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">2023</div>
+              <div class="tl-role">Bilibili · 项目统筹</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">2024</div>
+              <div class="tl-role">小红书 · 垂类运营</div>
+            </div>
+            <div class="tl-item now">
+              <div class="tl-year">2025.08—2026.08</div>
+              <div class="tl-role">金山办公 · 运营管培</div>
+            </div>
+          </div>
+          <div class="skill-box">
+            <div class="label">学习方向</div>
+            <div class="skill-row" aria-label="学习方向">
+              <div class="skill-card gray">内容创作与运营</div>
+              <div class="skill-card blue">商业化策略</div>
+              <div class="skill-card blue">用户洞察</div>
+              <div class="skill-card blue">数据分析</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="block" id="overview">
+          <h3>个人发展计划一览</h3>
+          <div class="idp-list">
+            <div class="idp-head"><span>轮岗目标</span><span>完成标志</span></div>
+            <div class="idp-row">
+              <div class="idp-goal">
+                <span>01</span>
+                <b>专业技能提升</b>
+              </div>
+              <ul class="idp-marks">
+                <li>根据业务需求具备独立取数能力</li>
+                <li>输出至少 1 份结构化项目数据复盘方案（含原因分析与策略建议）</li>
+                <li>产生至少 1 个基于数据的策略建议</li>
+              </ul>
+            </div>
+            <div class="idp-row">
+              <div class="idp-goal">
+                <span>02</span>
+                <b>商业化运营能力强化</b>
+              </div>
+              <ul class="idp-marks">
+                <li>方案通过评估并具备可执行性</li>
+                <li>策略设计进入评审</li>
+                <li>项目按计划推进并成功上线</li>
+                <li>核心商业指标实现预期提升</li>
+              </ul>
+            </div>
+            <div class="idp-row">
+              <div class="idp-goal">
+                <span>03</span>
+                <b>业务创新性探索</b>
+              </div>
+              <ul class="idp-marks">
+                <li>完成 1 个市场标杆玩法的深度调研分析</li>
+                <li>清晰理解公司主要业务模块间的逻辑关系与协同效应</li>
+                <li>提出 1 个创新人群或场景业务方案</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="chapter" id="growth">
+        <div class="chapter-head">
+          <span class="chapter-num">02</span>
+          <h2>成长与进步</h2>
+        </div>
+
+        <div class="subchapter" id="growth-narrative">
+          <h3>2.1 成长路径</h3>
+        </div>
+        <article class="block">
+          <div class="growth-timeline">
+            <div class="gt-node"><b>打基础</b><span>2025.08—2025.09</span></div>
+            <div class="gt-seg"></div>
+            <div class="gt-node"><b>独立承担</b><span>2025.10—2026.01</span></div>
+            <div class="gt-seg"></div>
+            <div class="gt-node active"><b>创造价值</b><span>2026.02—2026.08</span></div>
+          </div>
+          <div class="phase-stack">
+            <div class="phase-card">
+              <div class="phase-head">
+                <div class="name">Stage 1｜打基础</div>
+              </div>
+              <div class="phase-layer">
+                <div class="phase-layer-label">概述</div>
+                <p class="lead">业务部门 Landing，从了解到上手，完成任务交付</p>
+                <div class="kw-tags">
+                  <span class="phase-item">理解业务</span>
+                  <span class="phase-item">熟悉规则</span>
+                  <span class="phase-item">掌握工具</span>
+                  <span class="phase-item">基本方法</span>
+                </div>
+              </div>
+              <div class="phase-layer">
+                <div class="phase-layer-label">业务实例</div>
+                <ul class="phase-bullets">
+                  <li><b>业务图谱：</b>用户体系板块、商业化与外部合作基本链路</li>
+                  <li><b>工具上手：</b>运营平台学习、SQL取数</li>
+                  <li><b>方法入门：</b>用户分层、活动复盘、基础商业测算</li>
+                  <li><b>业务执行：</b>参与支付宝小程序集卡活动筹备</li>
+                </ul>
+              </div>
+            </div>
+            <div class="phase-card">
+              <div class="phase-head">
+                <div class="name">Stage 2｜独立承担</div>
+              </div>
+              <div class="phase-layer">
+                <div class="phase-layer-label">概述</div>
+                <p class="lead">在成熟阵地和新项目里独立负责模块</p>
+                <div class="kw-tags">
+                  <span class="phase-item">模块 Owner</span>
+                  <span class="phase-item">需求洞察</span>
+                  <span class="phase-item">方案输出</span>
+                  <span class="phase-item">协同推进</span>
+                </div>
+              </div>
+              <div class="phase-layer">
+                <div class="phase-layer-label">业务实例</div>
+                <ul class="phase-bullets">
+                  <li><b>挑战计划：</b>玩法机制设计、奖励成本测算、开发上线协同</li>
+                  <li><b>支付宝小程序：</b>人群分层策略、平台资源转化为收入增量</li>
+                  <li><b>备考场景：</b>人群调研、用户需求洞察、创新场景方案输出</li>
+                </ul>
+              </div>
+            </div>
+            <div class="phase-card active">
+              <div class="phase-head">
+                <div class="name">Stage 3｜创造价值</div>
+              </div>
+              <div class="phase-layer">
+                <div class="phase-layer-label">概述</div>
+                <p class="lead">主动发现创新机会并独立负责整个业务场景<br>个人 AI 经验沉淀为可复用方法论赋能组织</p>
+                <div class="kw-tags">
+                  <span class="phase-item">场景 Owner</span>
+                  <span class="phase-item">创新探索</span>
+                  <span class="phase-item">方法沉淀</span>
+                  <span class="phase-item">AI 提效</span>
+                </div>
+              </div>
+              <div class="phase-layer">
+                <div class="phase-layer-label">业务实例</div>
+                <ul class="phase-bullets">
+                  <li><b>备考场景：</b>洞察备考人群需求，探索创新业务场景</li>
+                  <li><b>中公唤端：</b>基于资料保存的需求唤端链路、教育行业合作可复用</li>
+                  <li><b>AI 实践：</b>个人提效数据分析 Skill、国内运营 AI L2 实训师</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="subchapter" id="cases">
+          <h3>2.2 业务案例</h3>
+        </div>
+
+        <div class="case-group">
+          <div class="case-group-head">
+            <h4>创新场景与外部合作</h4>
+          </div>
+
+          <article class="case" id="exam">
+            <div class="case-head">
+              <div class="case-label">阶段 1 · 上线前</div>
+              <h4>备考场景｜从 0 到 1 定义并落地场景</h4>
+            </div>
+            <div class="case-body">
+              <div class="detail-grid">
+                <div class="detail-row"><b>背景</b><p>WPS 端内存在千万级活跃备考用户，人群痛点明确、功能需求突出，但端内尚无垂直场景承接。</p></div>
+                <div class="detail-row"><b>难点 / 卡点</b>
+                  <ul class="detail-points">
+                    <li>需处理多维工作，能力范围要求广、角色边界模糊，对新人挑战较大，需快速建立多线并行与优先级判断</li>
+                    <li>需在「功能完整」与「尽快验证」之间取舍，许多能力未能全量上线</li>
+                  </ul>
+                </div>
+                <div class="detail-row"><b>策略 / 动作</b><p>基于扎实的用户调研拆解需求模块，厘清核心痛点输出 MVP 上线方案，利用 AI 工具制作交互 Demo 推动产研评审与开发，缩短内外部对齐周期。</p></div>
+                <div class="detail-row"><b>结果</b><p>4 月份备考场景 1 期上线，用户痛点功能模块落地。</p></div>
+              </div>
+              <div class="case-row">
+                <div class="case-row-label">价值产出</div>
+                <div class="kpi-grid cols-2">
+                  <div class="kpi"><span>上线 26 天次留</span><strong>62.11%</strong><small>任务中心约 2 倍 · 福利中心约 5 倍</small></div>
+                  <div class="kpi"><span>T+30 复访</span><strong>70.87%</strong><small>场景用户高粘性</small></div>
+                </div>
+              </div>
+              <div class="case-row">
+                <div class="case-row-label">能力成长</div>
+                <div class="cap-list cols-2">
+                  <div class="cap-item"><b>市场分析</b><p>完成备考市场调研与人群痛点分析，把分散需求收敛成可落地方案与需求模块</p></div>
+                  <div class="cap-item"><b>产品知识</b><p>能把运营诉求翻译成产品语言，用 AI 工具输出交互 Demo 与产研对齐形态</p></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case" id="exam-after">
+            <div class="case-head">
+              <div class="case-label">阶段 2 · 上线后</div>
+              <h4>备考场景｜数据验证、断点定位与策略小步验证</h4>
+            </div>
+            <div class="case-body">
+              <div class="detail-grid">
+                <div class="detail-row"><b>背景</b><p>场景上线后，核心功能活跃不及预期。</p></div>
+                <div class="detail-row"><b>策略 / 动作</b><p>通过整体运营漏斗、人群拆解、功能拆解、流量渠道拆解等下钻分析，完成 1 期数据复盘，定位断点问题：精准流量不足，并将分析结论转化为具体策略进行验证，明确 2 期优化思路。</p></div>
+                <div class="detail-row"><b>结果</b><p>通过消息 PUSH 触达客户端内精准备考人群，有效提升核心模块活跃渗透率；明确 2 期优化思路，聚焦人群触达精准化、用户链路优化。</p></div>
+              </div>
+              <div class="case-row">
+                <div class="case-row-label">价值产出</div>
+                <div>
+                  <p class="bar-lead">精准触达备考标签人群后，核心模块活跃显著提升</p>
+                  <div class="bar-list">
+                    <div class="bar-row"><span>备考进程点击率</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><b>5×</b></div>
+                    <div class="bar-row"><span>备考计划新建率</span><div class="bar-track"><div class="bar-fill" style="width:76%"></div></div><b>3.8×</b></div>
+                    <div class="bar-row"><span>备考资源点击率</span><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div><b>2×</b></div>
+                  </div>
+                </div>
+              </div>
+              <div class="case-row">
+                <div class="case-row-label">能力成长</div>
+                <div class="cap-list">
+                  <div class="cap-item"><b>运营数据分析</b><p>围绕业务问题搭建分析框架，通过多维下钻定位断点，小步验证推动策略迭代。</p></div>
+                  <div class="cap-item"><b>问题解决</b><p>通过数据归因，定位关键问题点并提出解决策略，形成从定位到解决的完整闭环。</p></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case" id="callup">
+            <div class="case-head">
+              <h4>中公唤端｜把资料保存做成教育场景唤端链路</h4>
+            </div>
+            <div class="case-body">
+              <div class="detail-grid">
+                <div class="detail-row"><b>背景</b>
+                  <ul class="detail-points">
+                    <li>中公等教培平台聚集资料消费型备考用户，用户下载到本地后再通过 WPS 打开，链路较长</li>
+                    <li>教培平台用户与 WPS 用户画像重合度高</li>
+                  </ul>
+                </div>
+                <div class="detail-row"><b>难点 / 卡点</b>
+                  <ul class="detail-points">
+                    <li>链路节点多、漏斗损耗大</li>
+                    <li>跨三方产研协同：运营产研、知识库产研、中公教育产研</li>
+                    <li>技术方案前置不足：技术问题公审没有暴露，开发阶段方案多次调整</li>
+                  </ul>
+                </div>
+                <div class="detail-row"><b>策略 / 动作</b><p>输出完整链路需求方案与技术泳道图，明确各方责任边界与交付节点。</p></div>
+                <div class="detail-row"><b>结果</b>
+                  <ul class="detail-points">
+                    <li>中公资料唤端链路打通，创新合作验证通过</li>
+                    <li>SOP 沉淀后，商务侧延展至其他教培机构，网易有道词典合作复用该链路（推进中）</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case-row">
+                <div class="case-row-label">价值产出</div>
+                <div>
+                  <p class="bar-lead">结合用户保存资料的天然需求，打通内容唤端路径，并沉淀可复用 SOP。</p>
+                  <div class="route-inline">
+                    <span>中公资料页新增【保存到 WPS】入口</span><i>→</i><span>WPS 中间页</span><i>→</i><span>用户打开 / 下载客户端</span><i>→</i><span>资料一键保存到 WPS</span>
+                  </div>
+                </div>
+              </div>
+              <div class="case-row">
+                <div class="case-row-label">能力成长</div>
+                <div class="cap-list">
+                  <div class="cap-item"><b>项目管理与计划执行</b><p>输出完整链路需求方案与技术泳道图，统筹拆解运营产研、知识库产研、中公产研三方的责任边界与交付节点，协调完成联调与上线验收。</p></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="case-group">
+          <div class="case-group-head">
+            <h4>商业策略与营销玩法</h4>
+          </div>
+          <article class="case" id="alipay">
+              <div class="case-head">
+                <div class="case-label">策略 1</div>
+                <h4>支付宝小程序｜人群分层精细化运营</h4>
+              </div>
+              <div class="case-body">
+                <div class="detail-grid">
+                  <div class="detail-row"><b>背景</b><p>支付宝小程序是成熟阵地，活动玩法与模块丰富，但缺乏精细化用户分层策略，转化效率不及预期。</p></div>
+                  <div class="detail-row"><b>策略 / 动作</b><p>对不同用户制定不同策略与目标：新客重点提转化率，在期用户与过期用户重点提客单价，组合策略提高小程序整体付费收入。</p></div>
+                  <div class="detail-row"><b>结果</b><p>人群分层策略得到验证，付费收入规模月环比 +35%。</p></div>
+                </div>
+                <div class="case-row">
+                  <div class="case-row-label">价值产出</div>
+                  <div>
+                    <p class="bar-lead">双十一期间分人群精细化运营：新客提转化，在期 / 过期提客单，组合策略提高整体付费收入。</p>
+                    <div class="kpi-grid cols-5">
+                      <div class="kpi"><span>订单数月环比</span><strong>+66%</strong></div>
+                      <div class="kpi"><span>付费率月环比</span><strong>+85%</strong></div>
+                      <div class="kpi"><span>付费收入月环比</span><strong>+35%</strong></div>
+                      <div class="kpi"><span>新客付费率</span><strong>+139%</strong></div>
+                      <div class="kpi"><span>在期付费收入</span><strong>+71%</strong></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="case-row">
+                  <div class="case-row-label">能力成长</div>
+                  <div class="cap-list">
+                    <div class="cap-item"><b>营销技能</b><p>识别不同身份用户在付费意愿与增长思路上的差异，设计用户分层的差异化策略</p></div>
+                    <div class="cap-item"><b>运营数据分析</b><p>通过存量订单表现分布分析与人群付费意愿分析确定策略方向</p></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="case">
+              <div class="case-head">
+                <div class="case-label">策略 2</div>
+                <h4>支付宝小程序｜平台生态资源转化为业务收入增量</h4>
+              </div>
+              <div class="case-body">
+                <div class="detail-grid">
+                  <div class="detail-row"><b>背景</b><p>618 期间，支付宝小程序收入增长承压，但内部资源有限。</p></div>
+                  <div class="detail-row"><b>策略 / 动作</b><p>基于对支付宝生态资源的挖掘，发现商家运营积分可兑换平台营销资源，将平台积分转化为支付券，触达更多支付宝公域用户。</p></div>
+                  <div class="detail-row"><b>结果</b><p>投放 3.45 万张「满 100 减 20」券，核销率 6.39%，券交易金额 41.93 万；净版收入 +108%、付费率 +0.8pp、eCPM +104%。</p></div>
+                </div>
+                <div class="case-row">
+                  <div class="case-row-label">价值产出</div>
+                  <div>
+                    <p class="bar-lead">618 零现金成本拉动净版增收</p>
+                    <div class="kpi-grid cols-3">
+                      <div class="kpi"><span>净版收入</span><strong>+108%</strong></div>
+                      <div class="kpi"><span>付费率</span><strong>+0.8pp</strong></div>
+                      <div class="kpi"><span>eCPM</span><strong>+104%</strong></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="case-row">
+                  <div class="case-row-label">能力成长</div>
+                  <div class="cap-list">
+                    <div class="cap-item"><b>商业技能</b><p>盘点并利用支付宝生态资源，识别商家运营积分的商业价值，把平台生态资源转化为可核算的商业收入增量。</p></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          <article class="case case-wide" id="challenge">
+            <div class="case-head">
+              <h4>挑战计划｜围绕业务目标设计玩法机制</h4>
+            </div>
+            <div class="case-body">
+              <div class="detail-grid">
+                <div class="detail-row"><b>背景</b>
+                  <ul class="detail-points">
+                    <li>「挑战」是市场上较成熟的促活、促收玩法，但 WPS 端内尚无成熟的挑战型商业场景</li>
+                    <li>年底收入目标承压，希望通过新场景带来收入新增量</li>
+                  </ul>
+                </div>
+                <div class="detail-row"><b>难点 / 卡点</b>
+                  <ul class="detail-points">
+                    <li>机制设定：奖励要够吸引，又要控制激励成本</li>
+                    <li>短时间多方协同：从方案到测试上线链路长，需在较短周期完成 0 到 1 落地</li>
+                  </ul>
+                </div>
+                <div class="detail-row"><b>策略 / 动作</b><p>确定性激励 × 竞争性激励，驱动用户持续参与；任务机制与促收目标绑定，将任务完成、付费行为与奖励获取形成正向关联。</p></div>
+                <div class="detail-row"><b>结果</b><p>短时间内协同完成全新玩法从 0 到 1 的搭建，初步验证玩法的商业潜力。</p></div>
+              </div>
+              <div class="case-row">
+                <div class="case-row-label">价值产出</div>
+                <div>
+                  <p class="bar-lead">短周期内协同完成全新玩法从 0 到 1 搭建并上线，初步验证新增促收场景潜力。</p>
+                  <div class="kpi-grid cols-3">
+                    <div class="kpi"><span>一期报名用户</span><strong>15.1万</strong></div>
+                    <div class="kpi"><span>参与完成率 | 访问用户参与意愿高</span><strong>约 78%</strong></div>
+                    <div class="kpi"><span>场景内付费达任务中心上线同期</span><strong>2 倍</strong></div>
+                  </div>
+                </div>
+              </div>
+              <div class="case-row">
+                <div class="case-row-label">能力成长</div>
+                <div class="cap-list">
+                  <div class="cap-item"><b>商业技能与营销技能</b><p>围绕业务目标设计挑战玩法机制，撬动用户付费，提高商业收入。</p></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="case-group">
+          <div class="case-group-head">
+            <h4>AI 提效与组织赋能</h4>
+          </div>
+          <article class="case" id="ai">
+            <div class="case-head">
+              <h4>一、个人提效</h4>
+              <p class="bar-lead" style="margin-top:8px">把 AI 嵌入业务场景，打造稳定提效工作流</p>
+            </div>
+            <div class="case-body">
+              <div class="cap-list">
+                <div class="cap-item"><b>Skill 提效</b><p>把重复流程封装成可复用 Skill，把「取数 — 口径对齐 — 下钻归因分析 — 可视化展现」变成标准化流水线。</p></div>
+                <div class="cap-item"><b>AI 交互 Demo</b><p>把想法变成可验证的产品形态。备考方案阶段用 Cursor 制作可体验交互的产品 Demo，显著减少产研沟通中的理解偏差，加快方案评审与落地节奏。</p></div>
+              </div>
+              <div class="kpi-grid cols-2">
+                <div class="kpi"><span>可复用 Skill | 合计连续复用 13 次</span><strong>2 个</strong></div>
+                <div class="kpi"><span>周月报复盘提效</span><strong>30%+</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case">
+            <div class="case-head">
+              <h4>二、组织赋能</h4>
+              <p class="bar-lead" style="margin-top:8px">三级分享 + 二级实训，形成横向赋能</p>
+            </div>
+            <div class="case-body">
+              <div class="cap-list">
+                <div class="cap-item"><b>用户体系 · 三级部门分享</b><p>面向团队成员分享 Cursor 新上线提效技巧，结合续费活动、弹窗文案等真实业务案例，沉淀可复用提示词与标准化使用流程，帮助同学快速上手。</p></div>
+                <div class="cap-item"><b>国内运营 · 二级 L2 实训</b><p>担任个人事业部·国内运营 AI 能力认证 L2 实训师，负责市场调研与用户洞察模块，将实践经验与市场前沿资讯拆解为可教学、可复用的标准流程，完成课件设计、培训带练。</p></div>
+              </div>
+            </div>
+          </article>
+
+          <div class="core-value">
+            <b>核心价值</b>
+            <p>完成从「个人提效」到「组织赋能」的能力迁移。把个人 AI 实践中的工具、方法和经验结构化沉淀，面向不同层级团队成员输出，帮助更多运营同学降低 AI 应用的学习和试错成本，扩大个人实践对组织效率提升的价值。</p>
+          </div>
+        </div>
+
+        <article class="block" id="ability">
+          <div class="ability-head">
+            <h3>2.3 能力成长 · 具体表现</h3>
+            <div class="ability-legend">
+              <span><i class="dot-before"></i>入职前</span>
+              <span><i class="dot-after"></i>当前</span>
+            </div>
+          </div>
+          <table class="table ability-table">
+            <colgroup>
+              <col class="dim">
+              <col class="skill">
+              <col>
+              <col class="radar">
+            </colgroup>
+            <thead><tr><th>维度</th><th>具体能力</th><th>业务支撑</th><th class="radar-col">能力画像</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="dim" rowspan="5">专业知识技能</td>
+                <td class="skill">产品知识</td>
+                <td><div class="chips"><span class="chip blue">备考场景模块设计</span><span class="chip">Vibe coding 交互 Demo</span></div></td>
+                <td class="radar-cell" rowspan="5"><svg id="radar-pro" class="radar-svg" viewBox="0 0 320 300" role="img" aria-label="专业知识技能雷达图"></svg></td>
+              </tr>
+              <tr>
+                <td class="skill">营销技能</td>
+                <td><div class="chips"><span class="chip blue">人群分层策略</span><span class="chip blue">平台公域资源转化</span></div></td>
+              </tr>
+              <tr>
+                <td class="skill">商业技能</td>
+                <td><div class="chips"><span class="chip blue">平台资源促收</span><span class="chip">挑战计划策略设计</span></div></td>
+              </tr>
+              <tr>
+                <td class="skill">市场分析</td>
+                <td><div class="chips"><span class="chip blue">备考市场分析</span><span class="chip">挑战玩法调研</span><span class="chip purple">L2 市场调研与用户洞察培训</span></div></td>
+              </tr>
+              <tr>
+                <td class="skill">数据分析</td>
+                <td><div class="chips"><span class="chip">挑战数据复盘分析</span><span class="chip blue">备考场景数据复盘分析</span><span class="chip blue">支付宝小程序大促复盘分析</span></div></td>
+              </tr>
+              <tr class="dim-gen">
+                <td class="dim" rowspan="3">通用能力</td>
+                <td class="skill">问题解决</td>
+                <td><div class="chips"><span class="chip blue">备考场景 1 期问题定位</span><span class="chip">中公唤端拆解责任边界</span></div></td>
+                <td class="radar-cell" rowspan="3"><svg id="radar-gen" class="radar-svg" viewBox="0 0 300 270" role="img" aria-label="通用能力雷达图"></svg></td>
+              </tr>
+              <tr class="dim-gen">
+                <td class="skill">计划执行</td>
+                <td><div class="chips"><span class="chip">中公跨团队排期、交付节点落实</span><span class="chip">支付宝小程序大促</span></div></td>
+              </tr>
+              <tr class="dim-gen">
+                <td class="skill">项目管理</td>
+                <td><div class="chips"><span class="chip blue">备考场景落地上线</span><span class="chip">挑战计划落地上线</span></div></td>
+              </tr>
+              <tr class="dim-org">
+                <td class="dim" rowspan="2">组织影响力</td>
+                <td class="skill">方法论建设</td>
+                <td><div class="chips"><span class="chip purple">数据分析 Skill</span><span class="chip">项目复盘</span></div></td>
+                <td class="radar-cell" rowspan="2"><svg id="radar-org" class="radar-svg" viewBox="0 0 300 270" role="img" aria-label="组织影响力雷达图"></svg></td>
+              </tr>
+              <tr class="dim-org">
+                <td class="skill">知识传播</td>
+                <td><div class="chips"><span class="chip purple">用户体系三级分享</span><span class="chip purple">国内运营 L2 市场调研与用户洞察实训</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="ability-note">雷达为相对分布示意，结合业务实践对标当前能力与入职前差距。</p>
+        </article>
+      </section>
+
+      <section class="chapter" id="insight">
+        <div class="chapter-head">
+          <span class="chapter-num">03</span>
+          <h2>认知与洞察</h2>
+        </div>
+
+        <article class="block">
+          <h3>3.1 业务认知与收获</h3>
+          <div class="ba">
+            <div class="ba-col before"><div class="label">以前 · 被动执行</div><p>更多是接老板派下来的需求，按明确指令完成执行，较少主动思考为什么做、有没有更好的方案。</p></div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-col now"><div class="label">现在 · 更主动的 Owner 意识</div><p>主动定义问题、拉齐目标、推进协同、预判风险，对结果负责，并输出创新业务方案，探索新的业务机会点。</p></div>
+          </div>
+          <div class="ba">
+            <div class="ba-col before"><div class="label">以前 · 方案导向</div><p>容易沉浸在自己的方案和玩法里，关注“怎么做得更完整、更有创意”。</p></div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-col now"><div class="label">现在 · 更成熟的业务思维</div><p>跳出单一方案视角，主动从业务目标、用户链路、核心指标、资源约束、投入产出判断“什么更值得做”。</p></div>
+          </div>
+          <div class="ba">
+            <div class="ba-col before"><div class="label">以前 · 经验驱动</div><p>SQL 从 0 学起，数据分析思维和复杂问题拆解能力有限。</p></div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-col now"><div class="label">现在 · 结构化、数据化、工具化</div><p>逐步形成数据验证 → 结构化判断 → 方案设计 → 快速验证 → 复盘迭代的工作方式，并用 AI 工具放大效率。</p></div>
+          </div>
+          <div class="ba">
+            <div class="ba-col before"><div class="label">以前 · 完成业务需求</div><p>比较关注做什么、达成什么，把用户当作业务结果的承接者。</p></div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-col now"><div class="label">现在 · 站在用户视角做业务</div><p>从用户动线、行为链路和真实需求出发，思考“用户为什么来、怎么使用、哪里流失、最终获得什么价值”，把用户作为业务设计的出发点。</p></div>
+          </div>
+        </article>
+
+        <article class="block" id="insight-reflect">
+          <h3>3.2 自我反思与改进</h3>
+          <div class="stack-list">
+            <div class="stack-item"><b>策略成熟度</b><p>已能通过数据定位问题，还需更快形成有取舍、可验证的策略思维与决策力。</p></div>
+            <div class="stack-item"><b>项目前置与节奏</b><p>强化需求评审、风险前置、里程碑和资源统筹，减少被动救火。</p></div>
+            <div class="stack-item"><b>长期经营视角</b><p>不过度关注项目的短期数字，更多关注业务生命周期与长期能力积累。</p></div>
+          </div>
+        </article>
+
+        <article class="block" id="insight-org">
+          <h3>3.3 对团队的建设性建议</h3>
+          <div class="suggest-grid">
+            <div class="suggest-card blue">
+              <div class="label">01 · 协同决策</div>
+              <h4>如何降低沟通成本，提升项目推进效率</h4>
+              <p><b>问题洞察：</b>实际项目推进中，方案和需求往往需要多层确认，容易反复修改、重复同步。经验尚浅时，也较难判断事项该同步到什么层级、什么颗粒度，容易「事无巨细」或「过滤过度」。</p>
+              <p><b>思考：</b>沉淀轻量化的项目同步 SOP + 决策分级机制，明确什么事情要同步、同步给谁、到什么颗粒度、什么情况下可自主决策，把依赖个人经验的沟通方式转成可复用组织机制。</p>
+            </div>
+            <div class="suggest-card purple">
+              <div class="label">02 · 运营基建</div>
+              <h4>从“能使用”走向“低门槛、高效率”</h4>
+              <p><b>问题洞察：</b>部分运营平台和工具的操作链路、规则较复杂，新人或跨业务接手有学习成本，成熟经验也较多依赖个人积累，组织层面的复用效率仍有提升空间。</p>
+              <p><b>思考：</b>运营基建除了满足“业务能做”，也应解决“业务好做、快速上手”。围绕高频场景推动工具标准化、流程模板化、经验知识化，把成熟方法沉淀到平台和知识库，降低学习和试错成本。</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="chapter" id="future">
+        <div class="chapter-head">
+          <span class="chapter-num">04</span>
+          <h2>发展规划</h2>
+        </div>
+
+        <article class="block">
+          <h3>4.1 能力提升</h3>
+          <div class="plan-grid">
+            <div class="plan-card blue">
+              <span class="chip blue">01 · 专业知识技能</span>
+              <h4>强化策略成熟度与落地转化能力</h4>
+              <p><b>市场分析：</b>把人群与竞品洞察转化为可落地的增长/付费策略</p>
+              <p><b>商业与数据：</b>形成目标拆解、事前预判与复盘迭代的完整闭环</p>
+              <p><b>营销技能：</b>在真实业务中持续打磨玩法设计与转化效率</p>
+            </div>
+            <div class="plan-card">
+              <span class="chip blue">02 · 通用能力</span>
+              <h4>强化复杂项目统筹与稳定交付能力</h4>
+              <p><b>问题解决：</b>主动拆解复杂问题，提前识别风险而非事后救火</p>
+              <p><b>计划执行：</b>把目标拆成清晰节奏，保障关键节点稳定交付</p>
+              <p><b>项目管理：</b>统筹里程碑、依赖与协同，扛住多项目并行</p>
+            </div>
+            <div class="plan-card">
+              <span class="chip blue">03 · 业务判断与全局视角</span>
+              <h4>强化经营判断与全局资源取舍能力</h4>
+              <p><b>业务判断：</b>结合用户需求、市场变化与经营目标判断机会优先级</p>
+              <p><b>全局视角：</b>理解所负责业务在更高层级整体盘中的定位与协同关系</p>
+              <p><b>资源取舍：</b>从整体收益与长期价值出发，合理评估投入并作出取舍</p>
+            </div>
+            <div class="plan-card purple">
+              <span class="chip purple">04 · 组织影响力</span>
+              <h4>强化方法论沉淀与团队赋能能力</h4>
+              <p><b>方法论：</b>把业务实践沉淀为可复用的策略与复盘方法</p>
+              <p><b>知识传播：</b>在组内输出洞察与经验分享，形成影响起点</p>
+              <p><b>协同赋能：</b>用清晰结论与工具，降低协作成本、放大团队效率</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="block" id="career">
+          <h3>4.2 职业规划</h3>
+          <div class="horizon year1">
+            <div class="k">未来1年 · 业务实践与能力成长</div>
+            <h3>在不同业务的锻炼中提高个人专业能力与担当</h3>
+            <div class="layer">
+              <div class="layer-side"><div class="n">01</div><h4>能力层</h4><div class="sub">专业能力与业务担当</div></div>
+              <div class="layer-cards">
+                <div class="mini"><h4>用户洞察与商业策略</h4><p>前置明确目标人群、增长机制与商业价值，形成体系化方案。</p></div>
+                <div class="mini"><h4>数据分析与策略拆解</h4><p>建立预测假设、指标拆解和复盘闭环，前置处理关键风险。</p></div>
+                <div class="mini"><h4>项目推进与内外部协同</h4><p>管理里程碑、依赖与资源，提升跨团队及外部合作推动力。</p></div>
+              </div>
+            </div>
+            <div class="layer">
+              <div class="layer-side"><div class="n">02</div><h4>业务层</h4><div class="sub">具体事项与结果</div></div>
+              <div class="layer-cards">
+                <div class="mini"><h4>备考二期</h4><p>迭代二期，开学季通过外部合作引入精准流量；与知识库合作引入AI备考功能，打造“AI靠谱备考”的用户心智。</p></div>
+                <div class="mini"><h4>支付宝阵地</h4><p>围绕引流与增收目标，了解支付宝生态的创新渠道与特色玩法，探索阿宝AI、灯火营销、会员频道等业务的合作机会点。</p></div>
+                <div class="mini"><h4>外部品牌合作</h4><p>围绕 PC-MAD 增长目标，探索市场品牌合作，通过提升会员品牌价值认知带动端活增长。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="horizon year35">
+            <div class="k">3-5年 · 规划目标与能力成长</div>
+            <h3>成长为能够独立统筹商业化增长业务的运营负责人</h3>
+            <div class="grid">
+              <div class="card"><h4>体系化策略思维</h4><p>从用户、市场和业务目标出发制定策略，并评估长期价值。</p></div>
+              <div class="card"><h4>数据驱动决策</h4><p>完成事前预测、指标拆解、过程判断与复盘迭代。</p></div>
+              <div class="card"><h4>复杂问题解决</h4><p>拆解复杂问题，前置识别风险并形成有效解决路径。</p></div>
+              <div class="card"><h4>跨团队项目负责</h4><p>统筹资源、节奏与协同，推动中大型项目稳定交付。</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="block" id="support">
+          <h3>4.3 希望公司支持</h3>
+          <div class="suggest-grid">
+            <div class="suggest-card blue">
+              <div class="label">更高视角</div>
+              <h4>参与 / 旁听高层级会议</h4>
+              <p>参与/旁听高层级规划、复盘、培训会议，培养更高层级的业务判断视角。</p>
+            </div>
+            <div class="suggest-card purple">
+              <div class="label">阶段反馈</div>
+              <h4>业务上级 + 组织部上级</h4>
+              <p>与业务上级、组织部上级的阶段性沟通机制，校正认知盲点，厘清职业困惑。</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    const bar = document.getElementById("progress");
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? window.scrollY / max * 100 : 0) + "%";
+    };
+    document.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    const tabs = [...document.querySelectorAll(".tab")];
+    const panes = [...document.querySelectorAll(".chapter")];
+    const showTab = (id) => {
+      tabs.forEach(tab => tab.classList.toggle("active", tab.dataset.tab === id));
+      panes.forEach(pane => pane.classList.toggle("is-on", pane.id === id));
+      window.scrollTo({ top: 0, behavior: "instant" });
+      onScroll();
+      history.replaceState(null, "", "#" + id);
+    };
+    tabs.forEach(tab => tab.addEventListener("click", () => showTab(tab.dataset.tab)));
+
+    const hash = location.hash.replace("#", "");
+    const hashMap = {
+      basic: "basic", intro: "basic", overview: "basic", top: "basic",
+      growth: "growth", "growth-narrative": "growth", cases: "growth",
+      exam: "growth", "exam-after": "growth", callup: "growth", alipay: "growth", challenge: "growth",
+      ai: "growth", ability: "growth",
+      insight: "insight", "insight-reflect": "insight", "insight-org": "insight",
+      future: "future", career: "future", support: "future"
+    };
+    if (hashMap[hash]) showTab(hashMap[hash]);
+
+    const svgEl = (name, attrs) => {
+      const node = document.createElementNS("http://www.w3.org/2000/svg", name);
+      Object.entries(attrs).forEach(([k, v]) => node.setAttribute(k, v));
+      return node;
+    };
+    const drawRadar = (svgId, labels, before, after, cfg = {}) => {
+      const svg = document.getElementById(svgId);
+      if (!svg) return;
+      const cx = cfg.cx ?? 120;
+      const cy = cfg.cy ?? 110;
+      const radius = cfg.radius ?? 62;
+      const levels = 5;
+      const afterColor = cfg.afterColor ?? "#2563eb";
+      const afterFill = cfg.afterFill ?? "rgba(37,99,235,.16)";
+      const point = (i, value) => {
+        const angle = -Math.PI / 2 + i * Math.PI * 2 / labels.length;
+        const r = radius * value / levels;
+        return [cx + Math.cos(angle) * r, cy + Math.sin(angle) * r];
+      };
+      for (let level = 1; level <= levels; level++) {
+        svg.appendChild(svgEl("polygon", {
+          points: labels.map((_, i) => point(i, level).join(",")).join(" "),
+          fill: "none", stroke: "#e2e8f0", "stroke-width": "1"
+        }));
+      }
+      labels.forEach((label, i) => {
+        const end = point(i, levels);
+        svg.appendChild(svgEl("line", { x1: cx, y1: cy, x2: end[0], y2: end[1], stroke: "#e2e8f0", "stroke-width": "1" }));
+        const pos = point(i, cfg.labelR ?? 5.55);
+        const text = svgEl("text", {
+          x: pos[0], y: pos[1], "text-anchor": "middle", "dominant-baseline": "middle",
+          fill: "#475569", "font-size": cfg.fontSize ?? "10", "font-weight": "700"
+        });
+        text.textContent = label;
+        svg.appendChild(text);
+      });
+      [
+        { values: before, color: "#93c5fd", fill: "rgba(147,197,253,.22)", width: "1.6" },
+        { values: after, color: afterColor, fill: afterFill, width: "2.2" }
+      ].forEach(s => {
+        svg.appendChild(svgEl("polygon", {
+          points: s.values.map((v, i) => point(i, v).join(",")).join(" "),
+          fill: s.fill, stroke: s.color, "stroke-width": s.width
+        }));
+        s.values.forEach((v, i) => {
+          const p = point(i, v);
+          svg.appendChild(svgEl("circle", { cx: p[0], cy: p[1], r: "2.8", fill: s.color }));
+        });
+      });
+    };
+    drawRadar("radar-pro", ["产品知识", "营销技能", "商业技能", "市场分析", "数据分析"], [2, 3, 2, 3, 2], [3, 4, 4, 4, 4], { cx: 160, cy: 152, radius: 96, labelR: 5.35, fontSize: "13" });
+    drawRadar("radar-gen", ["问题解决", "计划执行", "项目管理"], [2, 2, 2], [4, 4, 3], { cx: 150, cy: 138, radius: 88, labelR: 5.28, fontSize: "13" });
+    drawRadar("radar-org", ["方法论建设", "知识传播", "组织赋能"], [1, 1, 1], [2, 2, 2], {
+      cx: 150, cy: 138, radius: 88, labelR: 5.28, fontSize: "13",
+      afterColor: "#7c3aed", afterFill: "rgba(124,58,237,.16)"
+    });
+  </script>
+</body>
+</html>
