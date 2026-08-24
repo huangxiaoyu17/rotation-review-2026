@@ -668,9 +668,58 @@
       .hr-row, .detail-row, .stack-item, .idp-row, .idp-head { grid-template-columns: 1fr; gap: 4px; }
       .kpi-grid.cols-5, .kpi-grid.cols-3, .kpi-grid.cols-2 { grid-template-columns: 1fr; }
     }
+
+    body.locked { overflow: hidden; }
+    body.locked .progress,
+    body.locked .topbar,
+    body.locked .layout { display: none !important; }
+    .access-gate {
+      position: fixed; inset: 0; z-index: 10000;
+      display: grid; place-items: center; padding: 24px;
+      background:
+        radial-gradient(ellipse 70% 55% at 8% -5%, rgba(37, 99, 235, .12), transparent 58%),
+        radial-gradient(ellipse 55% 45% at 96% 8%, rgba(124, 58, 237, .12), transparent 52%),
+        #f6f8fc;
+    }
+    .access-card {
+      width: min(360px, 100%); padding: 28px 26px 24px;
+      border: 1px solid var(--line); border-radius: 18px;
+      background: rgba(255,255,255,.96); box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .access-card h2 { margin: 0 0 6px; font-size: 18px; }
+    .access-card p { margin: 0 0 18px; color: var(--muted); font-size: 13px; }
+    .access-card input {
+      width: 100%; padding: 11px 12px; margin-bottom: 10px;
+      border: 1px solid var(--line); border-radius: 10px;
+      font: inherit; font-size: 14px;
+    }
+    .access-card input:focus {
+      outline: none; border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+    .access-card button {
+      width: 100%; padding: 11px 12px; border: 0; border-radius: 10px;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: #fff; font-weight: 700; font-size: 14px;
+    }
+    .access-card .err {
+      min-height: 18px; margin-top: 10px;
+      color: #dc2626; font-size: 12px; font-weight: 600;
+    }
   </style>
 </head>
-<body>
+<body class="locked">
+  <div class="access-gate" id="access-gate" role="dialog" aria-labelledby="access-title">
+    <div class="access-card">
+      <h2 id="access-title">轮岗述职 · 访问验证</h2>
+      <p>请输入访问密码查看完整内容</p>
+      <form id="access-form">
+        <input id="access-input" type="password" autocomplete="current-password" placeholder="访问密码" required />
+        <button type="submit">进入</button>
+      </form>
+      <div class="err" id="access-err" aria-live="polite"></div>
+    </div>
+  </div>
   <div class="progress" id="progress"></div>
   <header class="topbar">
     <div class="topbar-brand">
@@ -1371,6 +1420,34 @@
     </main>
   </div>
 
+  <script>
+    (() => {
+      const HASH = "384edc88e70a3eaf0acb1dc29856991b7a1720ad04c4d867efc334f147691ae5";
+      const KEY = "rotation-review-unlocked";
+      const gate = document.getElementById("access-gate");
+      const form = document.getElementById("access-form");
+      const input = document.getElementById("access-input");
+      const err = document.getElementById("access-err");
+      const unlock = () => {
+        document.body.classList.remove("locked");
+        gate.remove();
+        sessionStorage.setItem(KEY, "1");
+      };
+      if (sessionStorage.getItem(KEY) === "1") unlock();
+      else input.focus();
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        err.textContent = "";
+        const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(input.value.trim()));
+        const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+        if (hex === HASH) unlock();
+        else {
+          err.textContent = "密码不正确，请重试";
+          input.select();
+        }
+      });
+    })();
+  </script>
   <script>
     const bar = document.getElementById("progress");
     const onScroll = () => {
